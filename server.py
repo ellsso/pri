@@ -7,9 +7,9 @@ app = Flask(__name__)
 # MongoDB 설정
 client = MongoClient("mongodb://localhost:27017/")
 db = client["motionSensorDB"]
-collection = db["motionData"]
+collection = db["sensorData"]
 
-@app.route("/api/motion-data", methods=["POST"])
+@app.route("/api/sensor-data", methods=["POST"])
 def save_motion_data():
     data = request.json.get("motionData", [])
     if data:
